@@ -36,6 +36,7 @@ func routes() *mux.Router {
 
 	r.HandleFunc("/stations", handleNewStation).Methods(http.MethodPost)
 	r.HandleFunc("/stations", handleListStations).Methods(http.MethodGet)
+	r.HandleFunc("/stations/{device_id}", handleUpdateStation).Methods(http.MethodPut)
 
 	return r
 }
